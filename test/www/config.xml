@@ -40,7 +40,7 @@
    <gap:plugin name="org.apache.cordova.splashscreen" />
     <preference name="SplashScreen" value="screen"/>
     <preference name="SplashScreenDelay" value="4000" />
-    <gap:plugin name="Battery" value="com.phonegap.BatteryListener"/>
+    <preference name="Battery" value="com.phonegap.BatteryListener"/>
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="www/res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
