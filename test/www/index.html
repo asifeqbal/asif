@@ -44,33 +44,41 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
         
-            app.initialize();
-            // Initializing global variables
-            var calcTop = ((document.body.clientHeight / 2) - 48);
-			var calcLeft = ((document.body.clientWidth / 2) - 48);
-            document.getElementById('offline-screen').style.height = document.body.clientHeight+'px';
-           
-            function onDeviceReady() {
-				// Blanker on change				
-				document.addEventListener("online", doWhenOnline, false);
-				document.addEventListener("offline", doWhenOffline, false);
-				var networkState = navigator.connection.type;
-				
-				if(networkState == Connection.NONE) {
-					doWhenOffline();
-				}
-				else{
-					doWhenOnline();
-				}                				
-			}	
-			
-			function doWhenOnline(){
-				document.getElementById('offline-screen').style.display = 'none';
-			}
-			
-			function doWhenOffline(){				
-				document.getElementById('offline-screen').style.display = 'block';
-			}
+            var statusdiv;
+
+        var drawStatus = function(info){
+            var s = "<p><b>Battery Status</b><br/>";
+            s += "Level is "+info.level + "<br/>";
+            s += "Plugged in is "+info.isPlugged;
+            s += "</p>";
+            statusdiv.innerHTML = s;
+        };
+                
+        var battCrit = function(info) {
+            navigator.notification.alert("Your battery is SUPER low!");
+            drawStatus(info);
+        };
+
+        var battLow = function(info) {
+            navigator.notification.alert("Your battery is low!");
+            drawStatus(info);
+        };
+
+        var battStat = function(info) {
+            drawStatus(info);
+        };
+      
+        var onDeviceReady = function() {
+            //listen for battery events
+            window.addEventListener("batterycritical", battCrit, false);
+            window.addEventListener("batterylow", battLow, false);
+            window.addEventListener("batterystatus", battStat, false);
+        };
+
+        function init() {
+            document.addEventListener("deviceready", onDeviceReady, true);
+            statusdiv = document.getElementById("status");
+        }   
         </script>
     </body>
 </html>
