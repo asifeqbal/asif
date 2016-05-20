@@ -57,8 +57,8 @@
     <icon platform="ios" height="72" src="res/icon/ios/icon-72.png" width="72" />
     <icon platform="ios" height="114" src="res/icon/ios/icon-57-2x.png" width="114" />
     <icon platform="ios" height="144" src="res/icon/ios/icon-72-2x.png" width="144" />
-	<icon gap:platform="winphone" src="res/icon/windows-phone/icon-48.png" />
-    <icon gap:platform="winphone" gap:role="background" src="res/icon/windows-phone/icon-173.png" />
+	<icon platform="winphone" src="res/icon/windows-phone/icon-48.png" />
+    <icon platform="winphone" src="res/icon/windows-phone/icon-173.png" />
 	
 	<splash density="ldpi" platform="android" src="res/screen/android/screen-ldpi-portrait.png" />
     <splash density="mdpi" platform="android" src="res/screen/android/screen-mdpi-portrait.png" />
