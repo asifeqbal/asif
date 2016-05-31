@@ -48,7 +48,7 @@
     <access origin="*" />
 	<access origin="facebook.com" />
   
-	<icon src="icon.png" />
+	
     <icon density="ldpi" platform="android" src="res/icon/android/icon-36-ldpi.png" />
     <icon density="mdpi" platform="android" src="res/icon/android/icon-48-mdpi.png" />
     <icon density="hdpi" platform="android" src="res/icon/android/icon-72-hdpi.png" />
