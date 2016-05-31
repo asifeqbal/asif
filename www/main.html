@@ -77,7 +77,7 @@
 			function onDeviceReady()                    
 			{  
 				document.getElementById('blanker').style.display = 'block';
-									
+				document.getElementById('blanker').style.display = 'none';					
 				// Blanker on change				
 				document.addEventListener("online", doWhenOnline, false);
 				document.addEventListener("offline", doWhenOffline, false);
@@ -89,7 +89,7 @@
 				else{
 					doWhenOnline();
 				} 
-				document.getElementById('blanker').style.display = 'none';
+				
 			}
 			
 			function doWhenOnline(){
